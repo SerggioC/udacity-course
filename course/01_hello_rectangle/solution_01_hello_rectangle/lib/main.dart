@@ -25,13 +25,16 @@ class HelloRectangle extends StatelessWidget {
     return Center(
       child: Container(
         color: Colors.greenAccent,
-        height: 400.0,
+        height: 300.0,
         width: 300.0,
-        child: Center(
-          child: Text(
-            'Hello!',
-            style: TextStyle(fontSize: 40.0),
-            textAlign: TextAlign.center,
+        child: Padding(
+          padding: const EdgeInsets.all(32.0),
+          child: Center(
+            child: Text(
+              'Hello retanguluzinho fofinho!',
+              style: TextStyle(fontSize: 40.0),
+              textAlign: TextAlign.center,
+            ),
           ),
         ),
       ),
