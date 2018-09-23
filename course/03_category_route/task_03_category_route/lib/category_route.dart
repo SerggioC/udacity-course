@@ -80,11 +80,14 @@ class CategoryRoute extends StatelessWidget {
         child: buildListView(categories));
 
     final appBar = AppBar(
-      title: Text(
-        'Unit Converter',
-        style: TextStyle(fontSize: 30.0, color: Colors.black),
+      title: Center(
+        child: Text(
+          'Unit Converter',
+          style: TextStyle(fontSize: 30.0, color: Colors.black54),
+          textAlign: TextAlign.center,
+        ),
       ),
-      elevation: 0.0,
+      elevation: 8.0,
     );
 
     return Scaffold(

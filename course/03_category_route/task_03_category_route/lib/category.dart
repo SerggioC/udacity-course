@@ -74,7 +74,8 @@ class Category extends StatelessWidget {
                   padding: EdgeInsets.all(16.0),
                   child: Icon(
                     iconLocation,
-                    size: 60.0,
+                    size: 50.0,
+                    color: color,
                   ),
                 ),
                 Center(
