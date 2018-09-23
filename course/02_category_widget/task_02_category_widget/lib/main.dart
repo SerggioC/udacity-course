@@ -32,9 +32,10 @@ class UnitConverterApp extends StatelessWidget {
         backgroundColor: Colors.green[100],
         body: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Category(
-                name: 'Custom row by Sergio\nAir Conditioning',
+                name: 'Custom row by Sergio\nIs a COOL icon!',
                 color: Colors.blue,
                 iconLocation: Icons.ac_unit,
               ),
@@ -42,6 +43,11 @@ class UnitConverterApp extends StatelessWidget {
                 name: _categoryName,
                 color: _categoryColor,
                 iconLocation: _categoryIcon,
+              ),
+              Category(
+                name: 'some cool icon',
+                color: Colors.yellow,
+                iconLocation: Icons.add_location,
               ),
             ],
           ),
