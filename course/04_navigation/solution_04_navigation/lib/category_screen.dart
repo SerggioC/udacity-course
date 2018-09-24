@@ -4,20 +4,18 @@
 
 import 'package:flutter/material.dart';
 
-import 'package:solution_04_navigation/category.dart';
+import 'package:solution_04_navigation/category_item.dart';
 import 'package:solution_04_navigation/unit.dart';
 
 final _backgroundColor = Colors.green[100];
 
 /// Category Route (screen).
-///
 /// This is the 'home' screen of the Unit Converter. It shows a header and
 /// a list of [Categories].
-///
 /// While it is named CategoryRoute, a more apt name would be CategoryScreen,
 /// because it is responsible for the UI at the route's destination.
-class CategoryRoute extends StatelessWidget {
-  const CategoryRoute();
+class CategoryScreen extends StatelessWidget {
+  const CategoryScreen();
 
   static const _categoryNames = <String>[
     'Length',
@@ -42,7 +40,6 @@ class CategoryRoute extends StatelessWidget {
   ];
 
   /// Makes the correct number of rows for the list view.
-  ///
   /// For portrait, we use a [ListView].
   Widget _buildCategoryWidgets(List<Widget> categories) {
     return ListView.builder(
@@ -53,8 +50,8 @@ class CategoryRoute extends StatelessWidget {
 
   /// Returns a list of mock [Unit]s.
   List<Unit> _retrieveUnitList(String categoryName) {
-    return List.generate(10, (int i) {
-      i += 1;
+    return List.generate(20, (int i) {
+      i++;
       return Unit(
         name: '$categoryName Unit $i',
         conversion: i.toDouble(),
@@ -82,7 +79,7 @@ class CategoryRoute extends StatelessWidget {
     );
 
     final appBar = AppBar(
-      elevation: 0.0,
+      elevation: 8.0,
       title: Text(
         'Unit Converter',
         style: TextStyle(

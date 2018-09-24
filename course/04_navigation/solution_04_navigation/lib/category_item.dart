@@ -8,16 +8,15 @@ import 'package:flutter/material.dart';
 // @required is defined in the meta.dart package
 import 'package:meta/meta.dart';
 
-import 'package:solution_04_navigation/converter_route.dart';
+import 'package:solution_04_navigation/converter_screen.dart';
 import 'package:solution_04_navigation/unit.dart';
 
 // We use an underscore to indicate that these variables are private.
 // See https://www.dartlang.org/guides/language/effective-dart/design#libraries
 final _rowHeight = 100.0;
-final _borderRadius = BorderRadius.circular(_rowHeight / 2);
+final _borderRadius = BorderRadius.circular(_rowHeight / 8);
 
-/// A custom [Category] widget.
-///
+/// This is a custom [Category] widget.
 /// The widget is composed on an [Icon] and [Text]. Tapping on the widget shows
 /// a colored [InkWell] animation.
 class Category extends StatelessWidget {
@@ -27,7 +26,6 @@ class Category extends StatelessWidget {
   final List<Unit> units;
 
   /// Creates a [Category].
-  ///
   /// A [Category] saves the name of the Category (e.g. 'Length'), its color for
   /// the UI, and the icon that represents it (e.g. a ruler).
   // While the @required checks for whether a named parameter is passed in,
@@ -45,29 +43,19 @@ class Category extends StatelessWidget {
         assert(units != null),
         super(key: key);
 
-  /// Navigates to the [ConverterRoute].
-  void _navigateToConverter(BuildContext context) {
+  void dosomethingcool() {
+    //Navigator.push(context, route);
+  }
+
+  /// Navigates to the [ConverterScreen].
+  void _navigateToConverterScreen(BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute<Null>(
       builder: (BuildContext context) {
-        return Scaffold(
-          appBar: AppBar(
-            elevation: 1.0,
-            title: Text(
-              name,
-              style: Theme.of(context).textTheme.display1,
-            ),
-            centerTitle: true,
-            backgroundColor: color,
-          ),
-          body: ConverterRoute(
-            color: color,
-            name: name,
-            units: units,
-          ),
-        );
+        return ConverterScreen(name: name, color: color, units: units,);
       },
     ));
   }
+
 
   /// Builds a custom widget that shows [Category] information.
   ///
@@ -85,10 +73,10 @@ class Category extends StatelessWidget {
         child: InkWell(
           borderRadius: _borderRadius,
           highlightColor: color,
-          splashColor: color,
+          splashColor: Colors.black54,
           // We can use either the () => function() or the () { function(); }
           // syntax.
-          onTap: () => _navigateToConverter(context),
+          onTap: () => _navigateToConverterScreen(context),
           child: Padding(
             padding: EdgeInsets.all(8.0),
             child: Row(
